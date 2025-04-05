@@ -1,11 +1,10 @@
 /* See LICENSE file for copyright and license details. */
-
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "mono:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
@@ -17,6 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
+
 static char *shell = "/usr/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
@@ -104,7 +104,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
 float alpha = 1;
@@ -143,30 +143,32 @@ static const char *colorname[] = {
 //};
  
 
+
 static const char *colorname[] = {
-	// 			    old 	new
-	"#050505", // #282828 #101010
-	"#c50f1f", // #cc241d #c50f1f
-	"#13a10e", // #98971a #13A10E
-	"#c19c00", // #279921 #C19C00
-	"#0037da", // #458588 #0037DA
-	"#881798", // #b16286 #881798
-	"#3a96dd", // #689d6a #3A96DD
-	"#cccccc", // #a89984 #cccccc
-	"#767676", // #928374 #767676
-	"#e74856", // #fb4934 #E74856
-	"#16c60c", // #b8bb26 #16C60C
-	"#f9f1a5", // #fabd2f #F9F1A5
-	"#3b78ff", // #83a598 #3B78FF
-	"#b4009e", // #d3869b #B4009E
-	"#61d6d6", // #8ec07c #61D6D6
-	"#F2F2F2", // #ebdbb2 #F2F2F2
+	// old = gruvbox, old1 = windowsterm, new = vscode term colors
+	// 			    old 	old1	  new (missalinged by one)
+	"#000000", // #282828 #101010 #000000
+	"#CD3131", // #cc241d #c50f1f #CD3131
+	"#0DBC79", // #98971a #13A10E #0DBC79
+	"#E5E510", // #279921 #C19C00 #E5E510
+	"#2472C8", // #458588 #0037DA #2472C8
+	"#BC3FBC", // #b16286 #881798 #BC3FBC
+	"#11A8CD", // #689d6a #3A96DD #11A8CD
+	"#E5E5E5", // #a89984 #cccccc #E5E5E5
+	"#666666", // #928374 #767676 #666666
+	"#F14C4C", // #fb4934 #E74856 #F14C4C
+	"#23D18B", // #b8bb26 #16C60C #23D18B
+	"#F5F543", // #fabd2f #F9F1A5 #F5F543
+	"#3B8EEA", // #83a598 #3B78FF #3B8EEA
+	"#D670D6", // #d3869b #B4009E #D670D6
+	"#29B8DB", // #8ec07c #61D6D6 #29B8DB
+	"#E5E5E5", // #ebdbb2 #F2F2F2 #E5E5E5
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#add8e6", /* 256 -> cursor */
 	"#555555", /* 257 -> rev cursor*/
-	"#282828", /* 258 -> bg */
-	"#ebdbb2", /* 259 -> fg */
+	"#181818", /* 258 -> bg */
+	"#ffffff", /* 259 -> fg */
 };
 
 
