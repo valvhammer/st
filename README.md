@@ -2,8 +2,6 @@
 
 changed a few stuff. will add more stuff later 
 
-TODO:
- - clear cmd does not work 
 
 og readme below
 
