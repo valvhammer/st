@@ -4,7 +4,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Roboto Mono:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
@@ -189,8 +189,8 @@ static uint forcemousemod = ShiftMask;
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-		{ "font",         STRING,  &font },
-    	{ "fontalt0",     STRING,  &font2[0] },
+//		{ "font",         STRING,  &font },
+//    	{ "fontalt0",     STRING,  &font2[0] },
 //		{ "color0",       STRING,  &colorname[0] },
 //		{ "color1",       STRING,  &colorname[1] },
 //		{ "color2",       STRING,  &colorname[2] },
@@ -210,7 +210,7 @@ ResourcePref resources[] = {
 //		{ "background",   STRING,  &colorname[258] },
 //		{ "foreground",   STRING,  &colorname[259] },
 		{ "cursorColor",  STRING,  &colorname[256] },
-		{ "termname",     STRING,  &termname },
+//		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
 		{ "minlatency",   INTEGER, &minlatency },
 		{ "maxlatency",   INTEGER, &maxlatency },
