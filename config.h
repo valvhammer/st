@@ -4,7 +4,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Cascadia Code:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
@@ -107,48 +107,47 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 1;
-float alphaOffset = 0.0;
+float alpha = 0.7;
+float alphaOffset = 0;
 float alphaUnfocus;
 
 static const char *colorname[] = {
 	// old = gruvbox, old1 = windowsterm, new = vscode term colors
 	// 			    old 	old1	  new
-	"#2e3436", // #282828 #101010 #000000
-	"#a40000", // #cc241d #c50f1f #CD3131
-	"#4e9a06", // #98971a #13A10E #0DBC79
-	"#c4a000", // #279921 #C19C00 #E5E510
-	"#3465a4", // #458588 #0037DA #2472C8
-	"#75507b", // #b16286 #881798 #BC3FBC
-	"#34a0a4", // #689d6a #3A96DD #11A8CD
-	"#babdb9", // #a89984 #cccccc #E5E5E5
-	"#555753", // #928374 #767676 #666666
-	"#ef2929", // #fb4934 #E74856 #F14C4C
-	"#8ae234", // #b8bb26 #16C60C #23D18B
-	"#fce94f", // #fabd2f #F9F1A5 #F5F543
-	"#729fcf", // #83a598 #3B78FF #3B8EEA
-	"#ad7fa8", // #d3869b #B4009E #D670D6
-	"#72d9cf", // #8ec07c #61D6D6 #29B8DB
-	"#eeeeec", // #ebdbb2 #F2F2F2 #E5E5E5
+	"#000000", // #282828 #101010 #000000
+	"#CD3131", // #cc241d #c50f1f #CD3131
+	"#0DBC79", // #98971a #13A10E #0DBC79
+	"#E5E510", // #279921 #C19C00 #E5E510
+	"#2472C8", // #458588 #0037DA #2472C8
+	"#BC3FBC", // #b16286 #881798 #BC3FBC
+	"#11A8CD", // #689d6a #3A96DD #11A8CD
+	"#E5E5E5", // #a89984 #cccccc #E5E5E5
+	"#666666", // #928374 #767676 #666666
+	"#F14C4C", // #fb4934 #E74856 #F14C4C
+	"#23D18B", // #b8bb26 #16C60C #23D18B
+	"#F5F543", // #fabd2f #F9F1A5 #F5F543
+	"#3B8EEA", // #83a598 #3B78FF #3B8EEA
+	"#D670D6", // #d3869b #B4009E #D670D6
+	"#29B8DB", // #8ec07c #61D6D6 #29B8DB
+	"#E5E5E5", // #ebdbb2 #F2F2F2 #E5E5E5
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc", /* 256 -> cursor */
+	"#add8e6", /* 256 -> cursor */
 	"#555555", /* 257 -> rev cursor*/
-	"#e4e4ef", /* 258 -> bg */
-	"#181818", /* 259 -> fg */
+	"#000000", /* 258 -> bg */
+	"#ffffff", /* 259 -> fg */
 };
-
 
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 257;
-unsigned int defaultrcs = 256;
-unsigned int background = 259;
+unsigned int defaultfg = 259;
+unsigned int defaultbg = 258;
+unsigned int defaultcs = 256;
+unsigned int defaultrcs = 257;
+unsigned int background = 258;
 
 /*
  * Default shape of cursor
@@ -255,10 +254,10 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
 	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Up,          zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_R,           zoomreset,      {.f =  0} },
-	{ MODKEY,              XK_C,           clipcopy,       {.i =  0} },
-	{ MODKEY,              XK_V,           clippaste,      {.i =  0} },
+	{ MODKEY,              XK_C,           	clipcopy,       {.i =  0} },
+	{ MODKEY,              XK_V,           	clippaste,      {.i =  0} },
 	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
 	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
@@ -269,7 +268,6 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
 	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} },
-	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
 	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
 	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
 	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
